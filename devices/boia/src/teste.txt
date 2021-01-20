@@ -1,0 +1,42 @@
+#include <Arduino.h>
+
+#define RELAY_PIN  D1
+#define PIN_BOIA  D2
+//relay D2 D1
+//outros D5 D6 D7
+#define PIN_LED1  D5
+#define PIN_LED2  D6
+#define BUTTON_PIN  D7
+
+
+ void setup(){
+    
+  Serial.begin(115200);
+  pinMode(RELAY_PIN, OUTPUT);
+  pinMode(PIN_LED1, OUTPUT);
+  pinMode(PIN_LED2, OUTPUT);
+  
+  pinMode(BUTTON_PIN, INPUT);
+  pinMode(PIN_BOIA, INPUT);
+
+ }
+ void loop(){
+   delay(2000);
+   digitalWrite(RELAY_PIN, HIGH);
+   digitalWrite(PIN_LED1, HIGH);
+   digitalWrite(PIN_LED2, HIGH);
+
+   delay(1000);
+   digitalWrite(RELAY_PIN, LOW);
+   delay(1000);
+   digitalWrite(PIN_LED1, LOW);
+   delay(1000);
+   digitalWrite(PIN_LED2, LOW);
+   delay(1000);
+   Serial.println("");
+   Serial.print("Pino button ");
+   Serial.println(digitalRead(BUTTON_PIN));
+   Serial.print("Pino boia ");
+   Serial.println(digitalRead(PIN_BOIA));
+   Serial.println("#########################");
+ }
