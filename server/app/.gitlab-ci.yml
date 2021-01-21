@@ -1,0 +1,18 @@
+npm_build:
+  stage:
+    build
+  script:
+    - npm install
+    - npm run build
+    - rsync -rvh ./dist/ /mnt/efs/static-deploy-stage/catsys/ --delete
+  only:
+    refs:
+      - master
+static_deploy:
+  stage:
+    deploy
+  script:
+    - rsync -rvh /mnt/efs/static-deploy-stage/catsys/ /mnt/efs/static-deploy/catsys/  --delete
+  only:
+    refs:
+      - master

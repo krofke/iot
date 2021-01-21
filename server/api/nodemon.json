@@ -1,0 +1,10 @@
+{
+    "env": {
+      "TZ": "America/Sao_Paulo",
+      "NODE_ENV": "development",
+      "LOG_LEVEL": "debug"
+    },
+    "watch": [ "./src" ],
+    "ext": "js",
+    "signal": "SIGTERM"
+  }

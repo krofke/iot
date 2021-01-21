@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "vuejs: chrome",
+        "url": "http://localhost:8080/",
+        "webRoot": "${workspaceFolder}/app/src",
+        "breakOnLoad": true,
+        "sourceMapPathOverrides": {
+          "webpack:///src/*": "${webRoot}/*"
+        }
+      },
+      {
+        "type": "firefox",
+        "request": "launch",
+        "name": "vuejs: firefox",
+        "url": "http://localhost:8080/",
+        "webRoot": "${workspaceFolder}/app/src",
+        "pathMappings": [{ "url": "webpack:///src/", "path": "${webRoot}/" }]
+      },
+      {
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "name": "Backend",
+        "program": "${workspaceFolder}/api/index.js",
+        "cwd": "${workspaceFolder}/api/",
+        "request": "launch",
+        "restart": true,
+        "runtimeExecutable": "nodemon",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "type": "pwa-node"
+      }  
+    ]
+  }

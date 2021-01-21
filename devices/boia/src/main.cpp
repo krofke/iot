@@ -14,7 +14,7 @@
 ESP8266WiFiMulti WiFiMulti;
 const char* host = "https://us-central1-sitio-alvorada.cloudfunctions.net/iotLog";
 
-#define DEVICE_NAME "bomba2"
+#define DEVICE_NAME "bomba3"
 #define DEV false
 
 #define RELAY_PIN  D1
@@ -24,7 +24,7 @@ const char* host = "https://us-central1-sitio-alvorada.cloudfunctions.net/iotLog
 #define BUTTON_PIN  D7
 
 
-const char* ssid = "Arly_WiFi";
+const char* ssid = "HamburgerMovel";
 
 Button2 button = Button2(BUTTON_PIN);
 

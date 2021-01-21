@@ -1,0 +1,127 @@
+import Vue from 'vue'
+
+import './styles/quasar.sass'
+import iconSet from 'quasar/icon-set/fontawesome-v5.js'
+import lang from 'quasar/lang/pt-br.js'
+import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
+import {
+    Quasar,
+    QLayout,
+    QHeader,
+    QDrawer,
+    QPageContainer,
+    QPage,
+    QToolbar,
+    QToolbarTitle,
+    QBtn,
+    QIcon,
+    QList,
+    QItem,
+    QItemSection,
+    QItemLabel,
+    QInput,
+    QTable,
+    QTh,
+    QTr,
+    QTd,
+    ClosePopup,
+    QCard,
+    QCardSection,
+    QCardActions,
+    QDialog,
+    QSeparator,
+    QTabs,
+    QTab,
+    QSelect,
+    QRadio,
+    Notify,
+    QBreadcrumbs,
+    QBreadcrumbsEl,
+    Ripple,
+    QField,
+    QUploader,
+    QTooltip,
+    QScrollArea,
+    QTimeline,
+    QTimelineEntry,
+    QCheckbox,
+    exportFile,
+    QDate, QPopupProxy, Loading,
+    QInnerLoading,
+    QForm,
+    QVirtualScroll,
+    QToggle,
+    QStepper,
+    QStep,
+    QStepperNavigation,
+    QSpace,
+    QImg
+
+} from 'quasar'
+
+Vue.use(Quasar, {
+    config: {
+        notify: {
+            timeout: 500
+        }
+    },
+    components: {
+        QSpace,
+        QStep,
+        QStepperNavigation,
+        QStepper,
+        QForm,
+        QCheckbox,
+        QInnerLoading,
+        QVirtualScroll,
+        QTimeline,
+        QTimelineEntry,
+        QScrollArea,
+        QTooltip,
+        QUploader,
+        QLayout,
+        QHeader,
+        QDrawer,
+        QPageContainer,
+        QPage,
+        QToolbar,
+        QToolbarTitle,
+        QBtn,
+        QIcon,
+        QList,
+        QItem,
+        QItemSection,
+        QItemLabel,
+        QInput,
+        QTable,
+        QTh,
+        QTr,
+        QTd,
+        QCard,
+        QCardSection,
+        QCardActions,
+        QDialog,
+        QSeparator,
+        QTabs,
+        QTab,
+        QSelect,
+        QRadio,
+        QBreadcrumbs,
+        QBreadcrumbsEl,
+        QField,
+        QDate,
+        QPopupProxy,
+        QToggle,
+        QImg
+    },
+    directives: {
+        ClosePopup,
+        Ripple
+    },
+    plugins: {
+        Notify,
+        Loading
+    },
+    lang: lang,
+    iconSet: iconSet
+})
