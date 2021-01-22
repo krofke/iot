@@ -1,0 +1,38 @@
+#include <Arduino.h>
+#include <wifi.cpp>
+#include <EEPROM.h>
+#include <KiotEprom.cpp>
+#include "CronAlarms.h"
+#include <sys/time.h> 
+#include <mqtt.cpp>
+
+#define version "mqttV20210121"
+#define device_type "mqtt"
+
+
+void cronRegister(){
+  KiotRegister(KiotRead_String(0), device_type, version);
+}
+void relogio(){
+  time_t tnow = time(nullptr);
+  Serial.println(asctime(gmtime(&tnow)));
+}
+
+void setup() {
+  Serial.begin(115200);
+  EEPROM.begin(4096);
+  Serial.print("BOOTING....");
+  WifiSetup();
+  cronRegister();
+
+
+  //cron jobs
+  Cron.create("0 */15 * * * *", cronRegister, false); 
+  Cron.create("*/1 * * * * *", relogio, false); 
+  
+}
+void loop() {
+  MQTT();
+  Cron.delay();
+  delay(10);
+}
